@@ -1,20 +1,38 @@
 @use "./reboot";
+@use "sass:math";
 
-#wrap {
+$meterHeight: 20;
+$meterRadius: math.div($meterHeight, 2);
+
+.wrapper {
+    width: 100vw;
+    height: 500vh;
+    position: relative;
+}
+.meter-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
+  height: $meterHeight + px;
+  background: rgb(224,224,249);
+background: linear-gradient(0deg, rgba(224,224,249,1) 0%, rgba(148,187,233,1) 100%);
+  z-index: 2;
+  border-radius: $meterRadius + px;
 }
-
-#target {
-position: absolute;
-top: 0;
-left: 0;
-width: 150px;
-height: 150px;
-background-size: cover;
-background-position: center center;
+.meter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 0px;
+    height: $meterHeight + px;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(
+        90deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgba(253, 29, 29, 1) 50%,
+        rgba(252, 176, 69, 1) 100%
+    );
+    border-radius: $meterRadius + px;
 }
-
