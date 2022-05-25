@@ -10,15 +10,19 @@ $meterRadius: math.div($meterHeight, 2);
     position: relative;
 }
 .meter-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: $meterHeight + px;
-  background: rgb(224,224,249);
-background: linear-gradient(0deg, rgba(224,224,249,1) 0%, rgba(148,187,233,1) 100%);
-  z-index: 2;
-  border-radius: $meterRadius + px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: $meterHeight + px;
+    background: rgb(224, 224, 249);
+    background: linear-gradient(
+        0deg,
+        rgba(224, 224, 249, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+    );
+    z-index: 2;
+    border-radius: $meterRadius + px;
 }
 .meter {
     position: fixed;
@@ -35,4 +39,52 @@ background: linear-gradient(0deg, rgba(224,224,249,1) 0%, rgba(148,187,233,1) 10
         rgba(252, 176, 69, 1) 100%
     );
     border-radius: $meterRadius + px;
+}
+
+.kv {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rate {
+    position: relative;
+    color: #fff;
+    background: #000;
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar {
+    width: 1px;
+    height: 300px;
+    border: 1px solid red;
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: 2;
+}
+
+.half-bar {
+    width: 150px;
+    height: 1px;
+    border: 1px solid red;
+    transform-origin: bottom right;
+    position: absolute;
+    bottom: 20%;
+    left: 10px;
+    // transform: translateX(100%);
+    z-index: 2;
 }
